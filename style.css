@@ -106,7 +106,7 @@ header {
   width: 500px;
   position: fixed;
   left: 100px;
-  top: 100px;
+  bottom: 100px;
   text-align: center;
   background: rgb(36, 33, 29);
 }
@@ -131,7 +131,8 @@ header {
     opacity: 1;
   }
 }
-.test{
-
-animation: 1s ease-in-out  animationbalao;
+@media(max-width: 680px){
+  .container-regras{
+    display: none;
+  }
 }
