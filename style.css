@@ -39,13 +39,14 @@ header {
   }
 }
 
-.btn-init-game {
+.btn-beginner,
+.btn-median,
+.btn-professional,.btn-voltar {
   z-index: 2;
   margin-top: 15px;
   width: 200px;
   height: 50px;
   font-size: 18px;
-  background-color: #81caa8;
   color: #161616;
   cursor: pointer;
   border: none;
@@ -67,3 +68,28 @@ header {
   cursor: url("./assets/alfinete.png"), auto;
   position: absolute;
 }
+
+.btn-beginner {
+  background-color: #81caa8;
+}
+
+.btn-median {
+  background-color: #e3e640;
+}
+
+.btn-professional {
+  background-color: #f35252;
+}
+.contador, .balaoTela{
+  color: aliceblue;
+  font-size: 36px;
+}
+.perdeu, .ganhou{
+  font-size: 46px;
+  color: aliceblue;
+  display: none;
+}
+.btn-voltar{
+  display: none;
+}
+
