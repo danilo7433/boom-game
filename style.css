@@ -67,6 +67,7 @@ header {
   height: auto;
   cursor: url("./assets/alfinete.png"), auto;
   position: absolute;
+  animation: 1s ease-in-out  animationbalao;
 }
 
 .btn-beginner {
@@ -90,6 +91,47 @@ header {
   display: none;
 }
 .btn-voltar{
+  position: fixed;
   display: none;
+  bottom: 20px;
 }
 
+.contador-frase,.balaoTela{
+  font-size: 36px;
+  color: aliceblue;
+  
+}
+
+.container-regras{
+  width: 500px;
+  position: fixed;
+  left: 100px;
+  top: 100px;
+  text-align: center;
+  background: rgb(36, 33, 29);
+}
+.container-regras h2{
+  margin:10px 0 10px 0;
+  color: #81caa8;
+  font-size: 36px;
+}
+.regras p{
+  font-size: 24px;
+  color: aliceblue;
+  margin: 5px 0 15px 0;
+}
+@keyframes animationbalao {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.test{
+
+animation: 1s ease-in-out  animationbalao;
+}

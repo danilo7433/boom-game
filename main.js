@@ -2,13 +2,16 @@ const buttonBeginner = document.querySelector(".btn-beginner");
 const buttonMedian = document.querySelector(".btn-median");
 const buttonProfessional = document.querySelector(".btn-professional");
 const contadorDeBalao = document.querySelector('.contador')
-
-
+const buttonVoltar = document.querySelector('.btn-voltar');
+const fraseVocePerdeu = document.querySelector('.perdeu');
+const fraseVoceGanhou = document.querySelector('.ganhou');
+const regrasDoJogo = document.querySelector('.container-regras')
 
 const iniciante = buttonBeginner.addEventListener("click", function () {
   buttonMedian.remove();
   buttonBeginner.remove();
   buttonProfessional.remove()
+  regrasDoJogo.remove();
   beginner();
 });
 
@@ -16,6 +19,8 @@ const mediano = buttonMedian.addEventListener("click", function () {
   buttonMedian.remove();
   buttonBeginner.remove();
   buttonProfessional.remove()
+  regrasDoJogo.remove();
+
   median();
 });
 
@@ -23,7 +28,15 @@ const profissional = buttonProfessional.addEventListener("click", function () {
   buttonMedian.remove();
   buttonBeginner.remove();
   buttonProfessional.remove()
+  regrasDoJogo.remove();
+
   professional();
+});
+const btnVoltar = buttonVoltar.addEventListener("click", function () {
+  buttonMedian.remove();
+  buttonBeginner.remove();
+  buttonProfessional.remove()
+  voltar();
 });
 
 function beginner() {
@@ -35,7 +48,11 @@ function median() {
 }
 
 function professional() {
-  setInterval(createBalloon, 200);
+  setInterval(createBalloon, 300);
+}
+
+function voltar() {
+  location.reload(true);
 }
 
 const balloonsContainer = document.querySelector(".container-balloons");
@@ -43,9 +60,11 @@ const balaoNaTela = document.querySelector('.balaoTela');
 
 function createBalloon() {
   const elementImg = document.createElement("img");
+  
 
   elementImg.setAttribute("src", "./assets/baloon.png");
   elementImg.setAttribute("class", "balloon");
+ 
 
   const positionLeft = Math.round(Math.random() * 90);
   const positionTop = Math.round(Math.random() * 90);
@@ -59,16 +78,10 @@ function createBalloon() {
   });
   balloonsContainer.appendChild(elementImg);
   ++balaoNaTela.innerHTML
-  if (balaoNaTela.innerHTML >= 10) {
-    return document.querySelector('.perdeu').style.display = 'block'
+  if (balaoNaTela.innerHTML == 10) {
+    return (fraseVocePerdeu.style.display='block') && (buttonVoltar.style.display ='block')
   }
 }
-    function voltar() {
-      document.querySelector('.btn-voltar').style.display = 'block'
-      function bntVoltar(this.){
-        location.reload(true);
-      }
-    }
 
 function removeBalloon(element) {
   const boomSound = new Audio("./assets/boom.mpeg");
@@ -77,7 +90,8 @@ function removeBalloon(element) {
   element.remove();
   ++contadorDeBalao.innerHTML
     --balaoNaTela.innerHTML
-  if (contadorDeBalao.innerHTML >= 5) {
-    return document.querySelector('.ganhou').style.display = 'block' && voltar()
-  }
+
+    if(contadorDeBalao.innerHTML == 20){
+      return (fraseVoceGanhou.style.display='block') && (buttonVoltar.style.display ='block')
+    }
 }

@@ -20,11 +20,21 @@
       <button class="btn-beginner">Iniciante</button>
       <button class="btn-median">Mediano</button>
       <button class="btn-professional">Profissional</button>
-      <button class="btn-voltar" onclick="btnVoltar()">voltar</button>
+      <button class="btn-voltar">voltar</button>
     </header>
     <section class="container-balloons"></section>
-    <div class="contador">0</div>
-    <div class="balaoTela">0</div>
+    <div class="contadores">
+    <div class="contador-frase">Pontos = <span class="contador">0</span></div>
+    <div class="contador-frase">Bolões tela = <span class="balaoTela">0</span></div>
+  </div>
+
+    <div class="container-regras">
+      <h2>Regras</h2>
+      <div class="regras">
+      <p>Pontos = 20 (ganhou)</p>
+      <p>Balões na tela  = 10 (perdeu)</p>
+      </div>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
