@@ -8,3 +8,5 @@ Jogo desenvolvido em aula com alunos Estartando Devs 2020
 - [ ] Pontuação (Balões estourados)
 
 Caso tenha sugestões de funcionalidades mande um pull request, adicionando-as nessa lista
+
+https://danilo7433.github.io/boom-game/
